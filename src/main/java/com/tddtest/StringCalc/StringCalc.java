@@ -2,15 +2,24 @@ package com.tddtest.StringCalc;
 
 public class StringCalc {
     int add(String numbers){
-        String[] numberArray = numbers.split(",");
+        String[] numberArray = numbers.split("\\n|,");
+        int sum=0;
         if (numbers.length() == 0) {
             return 0;
         }
 
-        if (numberArray.length > 1) {
-            return Integer.parseInt(numberArray[0]) + Integer.parseInt(numberArray[1]);
+        for (int i=0;i<numberArray.length;i++) {
+
+            try {
+                sum += Integer.parseInt(numberArray[i]);
+            }
+            catch (NumberFormatException e){
+                System.out.println("NumberFormatException occured");
+            }
+
         }
-        return Integer.parseInt(numberArray[0]);
+
+        return sum;
 
     }
 }

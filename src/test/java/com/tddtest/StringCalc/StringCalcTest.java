@@ -32,6 +32,14 @@ class StringCalcTest {
 
     @Test
     void moreThanTwoString(){
-        assertEquals(5,calc.add("2,3,4,5,6"));
+        assertEquals(20,calc.add("2,3,4,5,6"));
+        assertEquals(10,calc.add("2,3,5"));
+    }
+
+    @Test
+    void newLineCharacter(){
+        assertEquals(3,calc.add("1\n2"));
+        assertEquals(7,calc.add("1\n2,4"));
+
     }
 }

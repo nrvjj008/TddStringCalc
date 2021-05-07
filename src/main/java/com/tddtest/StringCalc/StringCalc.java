@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class StringCalc {
     final String NEGATIVE_EXCEPTION_MESSAGE=" negatives not allowed ";
+    final int MAX_NUMBER = 1000;
 
     int add(String numbers) throws NegativeException{
 
@@ -29,10 +30,12 @@ public class StringCalc {
                 if (number < 0){
                     negativeNumbers.add(number);
                 }
-                sum += number;
+                if(number <= MAX_NUMBER ) {
+                    sum += number;
+                }
             }
             catch (NumberFormatException e){
-                System.out.println(NEGATIVE_EXCEPTION_MESSAGE);
+                System.out.println("NumberFormatException occurred");
             }
         }
         if(negativeNumbers.size() > 0){

@@ -55,4 +55,10 @@ class StringCalcTest {
         NegativeException negativeException = assertThrows(NegativeException.class, ()->calc.add("-1,-2,3"));
         assertTrue(negativeException.getMessage().contains("negatives not allowed"));
     }
+
+    @Test
+    void greaterThanThousand() throws NegativeException{
+        assertEquals(1,calc.add("1,10001"));
+        assertEquals(1,calc.add("1,10001,200000,300000"));
+    }
 }

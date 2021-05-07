@@ -42,4 +42,10 @@ class StringCalcTest {
         assertEquals(7,calc.add("1\n2,4"));
 
     }
+    @Test
+    void customDelimeter(){
+        assertEquals(6,calc.add("//;\n1;2;3"));
+        assertEquals(70,calc.add("//#\n10#20#40"));
+
+    }
 }
